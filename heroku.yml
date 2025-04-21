@@ -2,4 +2,4 @@ build:
   docker:
     web: Dockerfile
 run:
-  web: java -jar /app/metabase.jar
+  web: /app/docker-entrypoint.sh
