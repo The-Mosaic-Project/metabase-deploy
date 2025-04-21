@@ -77,8 +77,6 @@ if [ -n "$HEROKU" ]; then
     JAVA_OPTS+=" -XX:-UseGCOverheadLimit"          # Disable limit to amount of time spent in GC. Better slow than not working at all
     JAVA_OPTS+=" -Xverify:none"                    # Skip bytecode verification, the Heroku buildpack comes from us so it's already verified. Speed up launch slightly
     JAVA_OPTS+=" -XX:+UseG1GC"                     # G1GC seems to use slightly less memory in my testing...
-    JAVA_OPTS+=" -Xmx512m"                         # Set maximum heap size to 512 MB
-    JAVA_OPTS+=" -Xms512m"                         # Set initial heap size to 512 MB
     JAVA_OPTS+=" -XX:+UseStringDeduplication"      # Especially when used in combination with string deduplication
 fi
 
